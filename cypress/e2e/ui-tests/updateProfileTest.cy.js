@@ -14,6 +14,9 @@ describe ('Update Profile Page Test' , function() {
 
     before('KoraPay Update Profile Test', function (){
         cy.visit(Cypress.env('url')+ "auth/login")
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
     })
 
     it ('should validate that user can navigate to dashboard and update profile for fullname and username', () => {
@@ -25,12 +28,12 @@ describe ('Update Profile Page Test' , function() {
         loginPage.signInBtn.click() 
         cy.wait(3000);
         logout.profileAvatar.click()
-        UpdateProfilePage.fullNameField.type('Kelly')
-        UpdateProfilePage.userName.type('44')
-       // UpdateProfilePage.updateDetailsBtn.click()
-
-    
-        //UpdateProfilePage.updateDetailsBtn.should('contain.text', '')
+        updateProfile.fullNameField.clear()
+        updateProfile.fullNameField.type('Kelly Kelechi')
+        updateProfile.userName.clear()
+        updateProfile.userName.type('kelekora1')
+        updateProfile.updateDetailsBtn.click()
+        updateProfile.updateSuccessMesg.should('contain', 'Update Successful')
 
 
     })

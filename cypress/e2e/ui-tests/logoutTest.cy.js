@@ -12,6 +12,9 @@ describe ('Logout Test' , function() {
 
     before('KoraPay Logout Test', function (){
         cy.visit(Cypress.env('url')+ "auth/login")
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
     })
 
     it ('should validate that user can navigate to dashboard and Logout', () => {

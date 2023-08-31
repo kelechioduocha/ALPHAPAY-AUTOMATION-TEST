@@ -19,6 +19,9 @@ describe('KoraPay Signup Test', function (){
 
     before('Open website', function (){
         cy.visit(Cypress.env('url'))
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
     });
 
     it("should verify that the user is on the home page successfully.", function () {

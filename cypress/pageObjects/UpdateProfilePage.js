@@ -2,7 +2,7 @@ export default class UpdateProfilePage{
 
     //Get the elements
     get fullNameField(){
-        return cy.get('form > :nth-child(1) > input')
+        return cy.get('input[name="full_name"]')
     }
 
     get userName(){
@@ -14,7 +14,7 @@ export default class UpdateProfilePage{
     }
 
     get updateSuccessMesg(){
-        return cy.get('')
+        return cy.get('div:nth-child(1)', { timeout: 5000 })
     }    
 
 }

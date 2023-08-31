@@ -12,7 +12,7 @@ module.exports = defineConfig({
   viewportWidth: 1600,
   e2e: {
     testIsolation: false,
-    baseUrl: "https://alphapay.netlify.app/",
+    //baseUrl: "https://alphapay.netlify.app/",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
